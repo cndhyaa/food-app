@@ -6,6 +6,17 @@ import Link from "next/link"
 export default function Home() {
   return (
     <>
+    
+    <link rel="stylesheet" href="styles\AdminHome.css" />
+                <section className="Menu" />
+                <div className="nav" />
+                <div className="logo"><h1>Khaney<b>Kura</b></h1></div>
+                <ul>
+                    <li><a href="#">Add Food </a></li>
+                    <li><a href="#">View Food</a></li>
+                    <li><a href="#">View Orders</a></li>
+                    <li><a href="#">LogOut</a></li>
+                </ul>
     <Navigation />
      <section className="grid">
         <div className="content">
