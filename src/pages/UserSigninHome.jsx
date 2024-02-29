@@ -1,27 +1,17 @@
-import Navigation from "@/components/navigation"
+import Navigation from "@/components/user-nav"
 import Link from "next/link"
 //  import  '../styles/globals.css'
 
 
 export default function Home() {
   return (
-    <>
-    
-    <link rel="stylesheet" href="styles\AdminHome.css" />
-                <section className="Menu" />
-                <div className="nav" />
-                <div className="logo"><h1>Khaney<b>Kura</b></h1></div>
-                <ul>
-                    <li><a href="#">Add Food </a></li>
-                    <li><a href="#">View Food</a></li>
-                    <li><a href="#">View Orders</a></li>
-                    <li><a href="#">LogOut</a></li>
-                </ul>
+    <>            
     <Navigation />
      <section className="grid">
         <div className="content">
             <div className="content-left">
             <div className="info">
+                <h2>Welcome!!!</h2>
                 <h3>Taste the joy in every bite.</h3>
                 <p>Elevating ordinary moments with extraordinary flavors.</p>
         </div>

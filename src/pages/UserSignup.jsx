@@ -1,6 +1,6 @@
 
 import styles from '../styles/login.module.css'
-export default function products() {
+export default function UserSignup() {
   return (
     <>
       <div className={styles.loginMain}>

@@ -11,9 +11,11 @@ export default function Navigation() {
                     <li><Link href="/product">Product</Link></li>
                 </ul> 
                 <div>
-                    <a href = "http://localhost:3000/login"> <input className="btn btn-text pr-3" type="submit" value="Sign In" name="Signin" /></a>
-                    <a style = {{textDecoration:'none'}} href = "http://localhost:3000/UserSignup"> <input className="btn btn-danger" type="submit" value="Sign Up" name="Signup" /></a>
-</div>
+                <a style = {{textDecoration:'none'}} > <input className="btn" type="submit" value="Cart" name="cart" /></a>
+
+                    <a href = "http://localhost:3000/login"> <input className="btn btn-danger" type="submit" value="logout" name="logout" /></a>
+                   
+</div> 
             </div>
         </section>
     )
