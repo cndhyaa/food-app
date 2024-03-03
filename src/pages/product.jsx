@@ -1,33 +1,42 @@
 import Navigation from "../components/navigation"
 
+import axios from "axios";
+import { useState, useEffect } from "react";
+
 export default function product() {
+  const [foods, setFoods] = useState([]);
+
+  useEffect(() => {
+    axios.get(`http://localhost:8000/api/foods`)
+      .then(res => {
+        const data = res.data.data;
+        console.log(data);
+        setFoods(data);
+
+      })
+  }, [])
+
   return (
     <div className="row">
       <Navigation />
       <div className="col-6">
-        <img src="img/chickenbiryani.jpeg" className="mx-auto d-block" alt="" width="600" height="500" />
+      <img src={'http://localhost:8000/static/' + foods.image} alt="" width="600" height="500" />
       </div>
       <div className="col-3">
-        <h2>Chicken Biryani</h2>
-        <p>Chicken Biryani is a highly aromatic, mouth-watering staple dish that needs no introduction.
-          Because of its endless nuanced flavors, it is perhaps the most comforting meal
-          of Indian cuisine that has been a part of community feasts, family gatherings,
-          and almost every Indian household for ages. It's a perfect one-pot dinner recipe that your whole family will love!</p>
+        <h2>{foods.name}</h2>
+        <p>{foods.description} </p>
 
         <h3>Ingredients:</h3>
-        <p> delicious and spicy one pot chicken biryani made with basmati rice,
-          spices, chicken and herbs. This is a beginners recipe and can be made with ease.
-          Serve chicken biryani with raita or salan (gravy).
-        </p>
+        <p>{foods.ingredients}</p>
 
         <br />
-        <h6>Price Rs.250</h6>
+        <h6>Price Rs.{foods.price}</h6>
         <button type="button" className="btn btn-success rounded-pill"><ion-icon name="cart-outline"></ion-icon>Add to cart</button>
         <button type="button" className="btn btn-danger rounded-pill">Buy now</button>
         <br /><br />
 
       </div>
-      <div className="container">
+      {/* <div className="container">
         <h4>Similar Products</h4>
         <div className="row">
           <div className="col-md">
@@ -60,7 +69,8 @@ export default function product() {
           </div>
         </div>
       </div>
-    </div>
+    */}
+     </div>
 
   )
 }
