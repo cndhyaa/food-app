@@ -6,9 +6,9 @@ export default function Navigation() {
             <div className="nav">
                 <div className="logo"><h1>Khaney<b>Kura</b></h1></div>
                 <ul>
-                    <li><Link href="/">Home</Link></li>
-                    <li><Link href="/products">Products</Link></li>
-                    <li><Link href="/product">Product</Link></li>
+                    <li><Link href="#">Home</Link></li>
+                    <li><Link href="/login">Products</Link></li>
+                    <li><Link href="/login">Product</Link></li>
                 </ul> 
                 <div>
                     <a href = "http://localhost:3000/login"> <input className="btn btn-text pr-3" type="submit" value="Sign In" name="Signin" /></a>

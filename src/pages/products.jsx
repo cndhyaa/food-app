@@ -1,4 +1,4 @@
-import Navigation from "@/components/navigation";
+import Navigation from "@/components/user-nav";
 import axios from "axios";
 import { useState, useEffect } from "react";
 

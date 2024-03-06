@@ -3,7 +3,7 @@ const loggedOutRoute = [
     '/products',
     '/product',
     '/UserSignup',
-    '/login'
+    '/login',
 ]
 
 export default loggedOutRoute;
