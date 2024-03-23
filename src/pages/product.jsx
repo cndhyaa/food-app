@@ -36,7 +36,7 @@ export default function product() {
                       {/* <input type="text" class="form-control" placeholder="First name" aria-label="First name"> */}
                     </div>
                     <div class="col">
-                      <button type="button" className="btn btn-danger rounded-pill">Buy now</button>
+                    <button type="button" className="btn btn-danger rounded-pill">Buy now</button>
                       <br /><br />
                       {/* <input type="text" class="form-control" placeholder="Last name" aria-label="Last name"> */}
                     </div>
