@@ -5,24 +5,44 @@ const login = async (loginEmail, loginPassword) => {
     try {
 
         const user = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
-        window.location.href='/UserSigninHome'
+        window.location.href = '/UserSigninHome'
         console.log({ loginEmail, loginPassword })
         console.log(user)
-        
+
     } catch (error) {
         console.log(error.message);
         return false;
     }
 };
+
 const signOutUser = async () => {
-    try{
-    
+    try {
+
         signOut(auth)
         window.location.href = '/'
 
-    } catch (error){
+    } catch (error) {
         console.log(error.message);
     }
 }
-export { login, signOutUser }
 
+// const isUserLoggedIn = async () => {
+//     try {
+//         onAuthStateChanged(auth, (currentUser) => {
+//             if(currentUser?.email){
+//                 setIsLoggedIn(true);
+//             } else {
+//                 setIsLoggedIn(false);
+//             }
+
+//         })
+//         return isLoggedIn;
+//     } catch (error) {
+//         console.log(error.message);
+//         return false;
+//     }
+
+// }
+
+
+export { login, signOutUser }

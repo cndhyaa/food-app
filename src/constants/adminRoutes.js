@@ -7,7 +7,6 @@ const adminRoutes = [
     '/viewfood',
     '/vieworder',
     '/UserSignup',
-    '/UserSigninHome',
     '/login'
 ]
 
