@@ -13,7 +13,7 @@ export default function Home() {
                 <h3>Taste the joy in every bite.</h3>
                 <p>Elevating ordinary moments with extraordinary flavors.</p>
         </div>
-        <Link href='/login' className="btn btn-danger">More Items</Link>
+        <Link href='/products' className="btn btn-danger">More Items</Link>
             </div>
             <div className="content-right">
                 <img src="img/Veg-Biryani-Recipe..jpg" alt=""/>
