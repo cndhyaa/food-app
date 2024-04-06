@@ -1,4 +1,4 @@
-import Navigation from "@/components/navigation"
+import Navigation from "@/components/user-nav"
 import Link from "next/link"
 //  import  '../styles/globals.css'
 

@@ -13,6 +13,7 @@ export default function Navigation() {
                 </ul>
                 <div>
                     <a style={{ textDecoration: 'none' }} > <input className="btn" type="submit" value="Cart" name="cart" /></a>
+                    
 
                     <input onClick={signOutUser} className="btn btn-danger" type="submit" value="logout" name="logout" />
 

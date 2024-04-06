@@ -1,5 +1,4 @@
-import Navigation from "../components/navigation"
-
+import Navigation from "../components/user-nav"
 import axios from "axios";
 import { useState, useEffect } from "react";
 
@@ -26,19 +25,18 @@ export default function product() {
           return <div className="col-md" key={index}>
             <img src={'http://localhost:8000/static/' + food.image} alt="" width="600" height="350" />
             <br />
-
             <h2>{food.name}</h2>
             <h5>Price Rs.{food.price}</h5>
 
-            <div class="row">
-              <div class="col">
+            <div className="row">
+              <div className="col">
                 <button type="button" className="btn btn-success rounded-pill"><ion-icon name="cart-outline"></ion-icon>Add to cart</button>
-                {/* <input type="text" class="form-control" placeholder="First name" aria-label="First name"> */}
+                {/* <input type="text" className="form-control" placeholder="First name" aria-label="First name"> */}
               </div>
-              <div class="col">
+              <div className="col">
                 {/* <button type="button" className="btn btn-danger rounded-pill">Buy now</button> */}
                 <br /><br />
-                {/* <input type="text" class="form-control" placeholder="Last name" aria-label="Last name"> */}
+                {/* <input type="text" className="form-control" placeholder="Last name" aria-label="Last name"> */}
               </div>
             </div>
             <h3>Description:</h3>

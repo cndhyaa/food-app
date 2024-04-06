@@ -3,7 +3,8 @@ const loggedInRoute = [
     '/',
     '/products',
     '/product',
-    '/login'
+    '/login',
+    '/cart'
 ]
 
 export default loggedInRoute;

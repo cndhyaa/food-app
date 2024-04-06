@@ -21,9 +21,9 @@ export default function Navigation() {
             <div className="nav">
                 <div className="logo"><h1>Khaney<b>Kura</b></h1></div>
                 <ul>
-                    <li><Link href="/">Home</Link></li>
+                    {/* <li><Link href="/">Home</Link></li>
                     <li><Link href="/products">Products</Link></li>
-                    <li><Link href="/product">Product</Link></li>
+                    <li><Link href="/product">Product</Link></li> */}
                 </ul> 
                     {isLoggedIn &&  <div><input onClick={signOutUser} className="btn btn-danger" type="submit" value="logout" name="logout" /></div>
 

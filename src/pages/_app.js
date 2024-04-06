@@ -14,7 +14,6 @@ export default function App({ Component, pageProps }) {
   useLayoutEffect(() => {
     onAuthStateChanged(auth, (currentUser) => {
       console.log({ email: currentUser?.email });
-      console.log({ path });
       // let route = currentUser?.email ? (currentUser?.email == "cndhyaamainali@gmail.com" ? adminRoutes : loggedInRoute) : loggedOutRoute;
       
       // if (route.includes("/admin") && !route.includes(path)){

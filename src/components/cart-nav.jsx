@@ -5,7 +5,7 @@ export default function Navigation() {
             <div className="nav">
                 <div className="logo"><h1>Khaney<b>Kura</b></h1></div>
                 <ul>
-                    <h3><li><ion-icon name="cart-outline"> </ion-icon>My<b class="text-danger"> Cart</b></li></h3>
+                    <h3><li><ion-icon name="cart-outline"> </ion-icon>My<b className="text-danger"> Cart</b></li></h3>
                 </ul>
 
             </div>

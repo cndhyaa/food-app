@@ -1,4 +1,4 @@
-import Navigation from "@/components/navigation";
+import Navigation from "@/components/user-nav";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
@@ -15,6 +15,21 @@ export default function products() {
       })
   }, [])
 
+  function addToCart(food) {
+    //getting data from localStorage
+
+    const oldData = localStorage.getItem("food");
+    if (oldData == null) {
+      const data = [{
+        id: food._id,
+        name: food.name,
+        price: food.price,
+        quantity: 1,
+        image: food.image
+      }]
+      localStorage.setItem("food", JSON.stringify(data));
+    }
+  }
   return (
     <>
       <Navigation />
@@ -27,7 +42,7 @@ export default function products() {
               <br />
               <h4>{food.name}</h4>
               <h6>Price Rs. {food.price}</h6>
-              <button type="button" className="btn btn-success rounded-pill"><ion-icon name="cart-outline"></ion-icon>Add to cart</button>
+              <button type="button" onClick={() => addToCart(food)} className="btn btn-success rounded-pill"><ion-icon name="cart-outline"></ion-icon>Add to cart</button>
               <button type="button" className="btn btn-danger rounded-pill">Buy now</button>
             </div>
           })}

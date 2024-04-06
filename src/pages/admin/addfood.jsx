@@ -57,10 +57,9 @@ export default function AddFood() {
                     accept="image/*"
                 ></input>
 
-                <input type="button" value="Submit" class="btn btn-danger" onClick={submitForm} />
+                <input type="button" value="Submit" className="btn btn-danger" onClick={submitForm} />
 
             </form>
-
         </>
 
     )
