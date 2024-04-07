@@ -35,7 +35,7 @@ export default function Home() {
                 <td>{food?.name}</td>
                 <td>Rs. {food?.price}</td>
                 <td>{food?.quantity}</td>
-                <td>{10}</td>
+                <td>{food.price*food.quantity}</td>
               </tr>
             })}
           </tbody>

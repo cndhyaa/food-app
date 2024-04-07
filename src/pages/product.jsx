@@ -1,3 +1,4 @@
+import { addToCart } from "@/utilities/cart";
 import Navigation from "../components/user-nav"
 import axios from "axios";
 import { useState, useEffect } from "react";
@@ -30,7 +31,7 @@ export default function product() {
 
             <div className="row">
               <div className="col">
-                <button type="button" className="btn btn-success rounded-pill"><ion-icon name="cart-outline"></ion-icon>Add to cart</button>
+                <button type="button" className="btn btn-success rounded-pill" onClick={() => addToCart(food)}><ion-icon name="cart-outline"></ion-icon>Add to cart</button>
                 {/* <input type="text" className="form-control" placeholder="First name" aria-label="First name"> */}
               </div>
               <div className="col">
