@@ -1,6 +1,7 @@
 const addToCart = (food) => {
   //getting data from localStorage
   const oldData = JSON.parse(localStorage.getItem("food")); /// 123
+  let total = Number(localStorage.getItem("total")) || 0;
   const newData = [{
     id: food._id, /// newData[0].id -> 123
     name: food.name, /// chicken
@@ -8,6 +9,10 @@ const addToCart = (food) => {
     quantity: 1,
     image: food.image
   }]
+
+  //setting total
+  let newTotal = total + newData[0].price;
+  localStorage.setItem("total", newTotal.toString());
 
   if (!oldData) {
     localStorage.setItem("food", JSON.stringify(newData));
@@ -43,7 +48,6 @@ const addToCart = (food) => {
     //     })
     //   }
     // })
-
     newData.forEach((newItem) => {
       // Check if newItem exists in oldData
       const existingItem = oldData.find(item => item.id === newItem.id);
@@ -57,6 +61,7 @@ const addToCart = (food) => {
     });
     localStorage.setItem("food", JSON.stringify(oldData))
   }
+  console.log({total, newTotal})
 }
 
 export { addToCart }

@@ -4,12 +4,16 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [foods, setFoods] = useState([]);
+  const [totals, setTotals] = useState(0);
 
   useEffect(() => {
     const data = localStorage.getItem("food");
     if (data !== null) {
       setFoods(JSON.parse(data))
     }
+
+    const total = Number(localStorage.getItem("total")) || 0;
+    setTotals(total)
   }, [])
 
   if(foods.length) {
@@ -40,6 +44,7 @@ export default function Home() {
             })}
           </tbody>
         </table>
+        TOTAL: {totals}
       </>
     )
   } else {
