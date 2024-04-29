@@ -10,11 +10,9 @@ export default function Navigation() {
                     <li><Link href="UserSigninHome">Home</Link></li>
                     <li><Link href="/products">Products</Link></li>
                     <li><Link href="/product">Product</Link></li>
+                    <li><Link href="/cart">Cart</Link></li>
                 </ul>
                 <div>
-                    <a style={{ textDecoration: 'none' }} > <input className="btn" type="submit" value="Cart" name="cart" /></a>
-                    
-
                     <input onClick={signOutUser} className="btn btn-danger" type="submit" value="logout" name="logout" />
 
                 </div>

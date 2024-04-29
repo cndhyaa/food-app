@@ -8,7 +8,8 @@ const adminRoutes = [
     '/vieworder',
     '/UserSignup',
     '/login',
-    '/cart'
+    '/cart',
+    '/viewSingleorder'
 ]
 
 export default adminRoutes;

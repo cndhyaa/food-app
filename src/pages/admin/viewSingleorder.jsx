@@ -1,6 +1,5 @@
 import Navigation from "@/components/admin-nav";
 import axios from "axios";
-import Link from "next/link";
 import { useState, useEffect } from "react";
 
 export default function products() {
@@ -27,19 +26,18 @@ export default function products() {
                     <table className="table table-borderless">
                         <thead>
                             <tr>
-                                <th>Email</th>
-                                <th>Address</th>
-                                <th>Total</th> 
-                                <th>View</th>
+                                <th>Food</th>
+                                <th>Quantity</th>
+                                <th>Price</th> 
                             </tr>
                         </thead>
                         <tbody>
                             {orders.length && orders.map((order) => {
                                 return <tr key={order?._id}>
-                                    <td>{order?.email}</td>
+                                    <td>{order?.food}</td>
                                     <td>{order?.address}</td>
                                     <td>{order.total}</td>
-                                    <td><Link href={"viewSingleorder?id=" + order?._id}>View</Link></td>
+                                    <td>{'view'}</td>
                                 </tr>
                             })}
                         </tbody>

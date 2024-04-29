@@ -29,7 +29,7 @@ export default function products() {
               <h4>{food.name}</h4>
               <h6>Price Rs. {food.price}</h6>
               <button type="button" onClick={() => addToCart(food)} className="btn btn-success rounded-pill"><ion-icon name="cart-outline"></ion-icon>Add to cart</button>
-              <button type="button" className="btn btn-danger rounded-pill">Buy now</button>
+              {/* <button type="button" className="btn btn-danger rounded-pill">Buy now</button> */}
             </div>
           })}
 

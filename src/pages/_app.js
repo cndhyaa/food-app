@@ -24,7 +24,7 @@ export default function App({ Component, pageProps }) {
       //   window.location.href = "/"
       // }
       if (currentUser?.email === 'cndhyaamainali@gmail.com' && !adminRoutes.includes(path)) {
-        window.location.href = 'admin'
+        window.location.href = '/admin'
       } else if (currentUser?.email && currentUser?.email !== "cndhyaamainali@gmail.com" && !loggedInRoute.includes(path)) {
         window.location.href = '/UserSigninHome'
       } else if (!currentUser?.email && !loggedOutRoute.includes(path)) {

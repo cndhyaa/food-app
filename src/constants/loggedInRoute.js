@@ -4,7 +4,9 @@ const loggedInRoute = [
     '/products',
     '/product',
     '/login',
-    '/cart'
+    '/cart',
+    '/vieworder',
+    '/viewSingleorder'
 ]
 
 export default loggedInRoute;
