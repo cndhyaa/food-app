@@ -37,7 +37,7 @@ export default function products() {
                                     <td>{order?.food}</td>
                                     <td>{order?.address}</td>
                                     <td>{order.total}</td>
-                                    <td>{'view'}</td>
+                                    {/* <td>{'view'}</td> */}
                                 </tr>
                             })}
                         </tbody>
