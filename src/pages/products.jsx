@@ -19,11 +19,11 @@ export default function products() {
   return (
     <>
       <Navigation />
-      <div className="container">
+      <div className="container ">
         <div className="row">
           {!foods.length && "no data"}
           {foods.length && foods.map((food, index) => {
-            return <div className="col-md" key={index}>
+            return <div className="col-md mb-3" key={index}>
               <img src={'http://localhost:8000/static/' + food.image} alt="" width="200" height="200" />
               <br />
               <h4>{food.name}</h4>

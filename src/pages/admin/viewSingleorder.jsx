@@ -1,19 +1,32 @@
 import Navigation from "@/components/admin-nav";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { useRouter } from 'next/router';
 
 export default function products() {
+    const router = useRouter();
     const [orders, setOrders] = useState([]);
+    const [id, setId] = useState('');
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/orders`)
+        setId(router.query.id);
+    }, [])
+
+    useEffect(() => {
+        if (id) {
+            getOrderById(id)
+        }
+    }, [id])
+
+    const getOrderById = (id) => {
+        axios.get(`http://localhost:8000/api/order/` + id)
             .then(res => {
                 const data = res.data.data;
                 console.log(data);
                 setOrders(data);
-
             })
-    }, [])
+
+    }
 
     return (
         <>
@@ -28,21 +41,23 @@ export default function products() {
                             <tr>
                                 <th>Food</th>
                                 <th>Quantity</th>
-                                <th>Price</th> 
+                                <th>Price</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {orders.length && orders.map((order) => {
-                                return <tr key={order?._id}>
-                                    <td>{order?.food}</td>
-                                    <td>{order?.address}</td>
-                                    <td>{order.total}</td>
-                                    {/* <td>{'view'}</td> */}
-                                </tr>
-                            })}
+                            
+                        {orders.length > 0 && orders.map((order) =>
+                                order.order.map((item, index) => ( 
+                                    <tr key={item.id || index}>
+                                        <td>{item.name}</td>
+                                        <td>{item.quantity}</td>
+                                        <td>{item.price * item.quantity}</td>
+                                    </tr>
+                                ))
+                            )}
                         </tbody>
                     </table>
-
+                            Total: {orders.length > 0 ? orders[0].total : ''}
                 </div>
             </div>
         </>

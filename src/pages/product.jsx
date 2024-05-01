@@ -23,7 +23,7 @@ export default function product() {
 
         {!foods.length && "no data"}
         {foods.length && foods.map((food, index) => {
-          return <div className="col-md" key={index}>
+          return <div className="col-md mb-10" key={index}>
             <img src={'http://localhost:8000/static/' + food.image} alt="" width="600" height="350" />
             <br />
             <h2>{food.name}</h2>
