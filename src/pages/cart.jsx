@@ -21,6 +21,15 @@ export default function Home() {
           processId: crypto.randomUUID(),
           totalAmount: totals
       })
+
+      if (typeof window !== 'undefined') { 
+        // Clear the cart upon successful payment
+        localStorage.removeItem("food");
+        localStorage.removeItem("total");
+        setFoods([]);
+        setTotals(0);
+              }
+
   }
 
   useEffect(() => {
