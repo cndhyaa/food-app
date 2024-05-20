@@ -90,8 +90,8 @@ export default function Home() {
         </div>
         <div>
           <br />
-          <button class="btn btn-success" onClick={purchase}> Buy Now </button>
-          <button class="btn btn-success" onClick={pay}> Pay</button>
+          <button class="btn btn-success m-2" onClick={purchase}> Buy Now </button>
+          <button class="btn btn-success m-2" onClick={pay}> Pay</button>
         </div>
       </>
     )
