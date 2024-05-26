@@ -15,20 +15,20 @@ export default function Home() {
   });
 
   const pay = () => {
-      esewaPayment.initiate({
-          amount: totals,
-          // Add A unique process-id
-          processId: crypto.randomUUID(),
-          totalAmount: totals
-      })
+    esewaPayment.initiate({
+      amount: totals,
+      // Add A unique process-id
+      processId: crypto.randomUUID(),
+      totalAmount: totals
+    })
 
-      if (typeof window !== 'undefined') { 
-        // Clear the cart upon successful payment
-        localStorage.removeItem("food");
-        localStorage.removeItem("total");
-        setFoods([]);
-        setTotals(0);
-              }
+    if (typeof window !== 'undefined') {
+      // Clear the cart upon successful payment
+      localStorage.removeItem("food");
+      localStorage.removeItem("total");
+      setFoods([]);
+      setTotals(0);
+    }
 
   }
 
@@ -76,7 +76,53 @@ export default function Home() {
                 <td><img src={'http://localhost:8000/static/' + food?.image} alt="" width="40" height="40" /></td>
                 <td>{food?.name}</td>
                 <td>Rs. {food?.price}</td>
-                <td>{food?.quantity}</td>
+                <td>{food?.quantity}
+                  <button className="btn" onClick={() => {
+                    const newFoods = []
+                    foods.forEach((f) => {
+                      if (food.id == f.id) {
+                        console.log(f)
+                        newFoods.push({
+                          // food:"[{"id":"664b52c830fac7af62b71a85","name":"Cheese Cake","price":350,"quantity":1,"image":"1716207965016_cheese cake.jpeg"}]"
+                          id: food.id, name: food.name, price: food.price, quantity: food.quantity + 1, image: food.image
+                        })
+                      } else {
+                        newFoods.push(f)
+
+                      }
+                      console.log(newFoods)
+                      setFoods(newFoods)
+                      localStorage.setItem("food", JSON.stringify(newFoods));
+                      const sum = newFoods.reduce((acc,cur)=>{
+                        return acc+(cur.price*cur.quantity)
+                        },0)
+                        setTotals(sum)
+                        localStorage.setItem("total",sum);
+                    })
+                  }}>+</button><button className="btn" onClick={() => {
+                    const newFoods = []
+                    foods.forEach((f) => {
+                      if (food.id == f.id) {
+                        console.log(f)
+                        newFoods.push({
+                          // food:"[{"id":"664b52c830fac7af62b71a85","name":"Cheese Cake","price":350,"quantity":1,"image":"1716207965016_cheese cake.jpeg"}]"
+                          id: food.id, name: food.name, price: food.price, quantity: food.quantity - 1, image: food.image
+                        })
+                      } else {
+                        newFoods.push(f)
+
+                      }
+                      console.log(newFoods)
+                      setFoods(newFoods)
+                      localStorage.setItem("food", JSON.stringify(newFoods));
+                      const sum = newFoods.reduce((acc,cur)=>{
+                      return acc+(cur.price*cur.quantity)
+                      },0)
+                      setTotals(sum)
+                      localStorage.setItem("total",sum);
+                    })
+
+                  }}>-</button></td>
                 <td>{food.price * food.quantity}</td>
               </tr>
             })}
